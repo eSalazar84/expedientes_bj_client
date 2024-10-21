@@ -13,10 +13,9 @@ export interface Iexpediente {
     titulo_expediente: string,
     descripcion: string,
     dependenciaId: number,
-    dependencia: Idependencia,
-    pases: Ipase[]
+    dependencia: string | Idependencia;  // Permite string o Idependencia
+    pases: number | Ipase[];
 }
-
 
 export interface Idependencia {
     idDependencia: number,

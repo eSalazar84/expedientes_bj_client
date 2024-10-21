@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { allExpedientes } from "../services/expediente-service";
-import { Iexpediente } from "../services/interfaces/api.types";
+import { Iexpediente } from "../types/api.types";
 
 
 export const useExpedientes = () => {
     const [expedientes, setExpedientes] = useState<Iexpediente[]>([])
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+    const [loading_expedientes, setLoading] = useState(true)
+    const [error_expedientes, setError] = useState(null)
 
     const fetchExpedientes = async () => {
         try {
@@ -24,5 +24,5 @@ export const useExpedientes = () => {
         fetchExpedientes()
     }, [])
 
-    return { expedientes, loading, error }
+    return { expedientes, loading_expedientes, error_expedientes }
 }
